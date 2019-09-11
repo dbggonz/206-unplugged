@@ -126,8 +126,18 @@ header nav {
 header nav ul {
     display: flex;
     justify-content: center;
-    width: 44%;
+    flex-flow: row wrap;
+/*    width: 44%;*/
     margin: 20px 0;
+
+}
+
+header nav ul li {
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    flex-flow: row nowrap;
+    padding: 5px;
 }
 
 header-divider {
@@ -135,18 +145,19 @@ header-divider {
     margin: 50px 0;
 }
 
-footer .social-icons {
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    flex-flow: row wrap;
 }
+/* These don't need to be column, why are they? */
 
-footer .social-icons p {
+/*footer .social-icons p {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+}*/
 
 
 content-wrapper {
@@ -159,7 +170,7 @@ content-wrapper {
 
 footer .content-wrapper {
     width: 55%;
-    margin: 50px 0;
+    margin: 25px 0;
     padding: 80px 0;
 }
 
@@ -172,8 +183,13 @@ footer .content-wrapper {
         flex-flow: column wrap;
 }
 
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+}
 form .input{
-    color: #ff0000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -201,16 +217,21 @@ aside {
 }
 
 .features article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
     width: 84%;
     margin: 25px 0;
 }
+
 
 .features .features-items {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: row wrap;
-    padding: 100px;
+/*    padding: 100px;*/
 }
 
 /* Reviews */
@@ -227,20 +248,66 @@ aside {
     margin: 50px 0;
 }
 
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+footer .social-icons p {
+  display: inline;
+  padding: 20px;
+}
+
+footer h3 {
+    width: 144px;
+}
+
 /* About Page */
 
 .mission {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: row wrap;
+}
+
+.mission-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    padding: 15px;
 }
 
 .contact-section {
     display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+.column-one, .column-two {
+    width: 200px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+.column-two {
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
+}
+
+.contact-section h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
 }
 
 /* FAQ Page */
@@ -264,6 +331,20 @@ aside {
 header .content-wrapper, .features p, footer p {
   margin: 0;
 } 
+
+/* FAQ Page */
+
+    .faq .content-wrapper {
+        justify-content: space-between;
+    }
+    
+    .faq-content {
+        flex-basis: 40%;
+    }
+ 
+    .faq h2 {
+        width: 100%;
+    }
 
 
 /* ==========================================================================
@@ -355,15 +436,203 @@ header .content-wrapper, .features p, footer p {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+@media only screen and (min-width: 768px) {
+
+/* Tablet styles here */
+
+/* General */
+
+p {
+  color: red;
 }
 
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+.content-wrapper {
+    max-width: 640px;
+/*    margin: 100px 0;*/
+/*    padding: 15px;*/
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+}
+
+  header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+
+header .content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+    width: 640px;
+}
+
+header-divider {
+  display: none;
+}
+
+/* Aside */
+
+form .input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+aside .content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+}
+
+/* Features */
+
+.features .features-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    width: 82%;
+}
+
+.features article {
+  flex-basis: ;
+}
+
+/* Reviews */
+
+.reviews article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+}
+
+/* Footer */
+
+/*
+footer .content-wrapper {
+        width: 
+        margin: 100px 0;
+    }
+    
+    .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+ 
+    footer .contact {
+        margin-bottom: 0;
+    }
+ 
+    footer .copyright {
+        width:
+    }*/
+
+    footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+faq-content {
+      flex-basis:;
+    }
+
+/* About Page */
+ 
+.mission-content {
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+}
+
+.mission-content p {
+    width: 634px;
+
+}
+
+.contact-section .content-wrapper h2 {
+    width: 640px;
+}
+
+/*.contact-content {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}*/
+
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.column-one, .column-two {
+    width: 200px;
+/*    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;*/
+}
+
+.column-one h3, .column-two h3 {
+    width: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+}
+@media only screen and (min-width: 1200px) {
+  /* Desktop styles here */
+
+p {
+  color: blue;
+}
+
+header nav {
+/* something to space out the logo and link*/
+}
+
+  .features .features-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    width: 75%;
+}
+
+header .content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+}
+
+form .input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+
 }
 
 /* ==========================================================================
